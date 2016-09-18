@@ -8,6 +8,14 @@
   },
   "author": "Landan Jackson",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmj0011/depstat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lmj0011/depstat/issues"
+  },
+  "homepage": "https://github.com/lmj0011/depstat",
   "bin": {
     "depstat": "./index.js"
   },

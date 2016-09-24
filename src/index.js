@@ -9,14 +9,12 @@ const Table = require('cli-table');
 const detective = require('detective'); //NOTE can use this for commonJS
 const SortedArrayMap = require('collections/sorted-array-map');
 const flatten = require('array-flatten');
-const glob = require('glob-fs')({ gitignore: true });
+const glob = require('glob');
 const minimatch = require('minimatch');
 
 Promise.config({
   longStackTraces: true
 });
-
-//console.log(argv);
 
 
 // instantiate table
@@ -42,7 +40,8 @@ const sortfunc = (a, b)=> {
 
 const useCount = (depName, loaderFormat)=> {
   let arr = imported.filter((val)=> {
-    return val === depName;
+    // console.log({found: val, match: depName.split('/')[0]});
+    return val.split('/')[0] === depName.split('/')[0];
   });
 
   depMap.set(depName, {
@@ -53,14 +52,14 @@ const useCount = (depName, loaderFormat)=> {
 };
 
 
-let path = argv.path || 'src/*';
+let path = argv.path || 'src/**/*';
 let pckjson = argv.dep || 'package.json';
 let isEs6 = argv.es6;
 
 let imported = [];
 let depMap = new SortedArrayMap();
 let npmDeps = JSON.parse(fs.readFileSync(pckjson, 'utf8'));
-let files = glob.readdirSync(path, {});
+let files = glob.sync(path);
 
 // we only need .js files
 files = files.filter(minimatch.filter('*.js', {matchBase: true}));
@@ -70,7 +69,7 @@ files = files.filter(minimatch.filter('*.js', {matchBase: true}));
 let importPrms = files.map((_path)=> {
   let prm = new Promise((resolve, reject)=> {
     let src = fs.readFileSync(_path, 'utf8');
-    resolve(detectiveEs6(src));
+    resolve(detectiveEs6(src || ' '));
   });
   return prm;
 });

@@ -17,11 +17,11 @@ _from your **project's root folder**_:
 ``` sh
 $:~/Project$ depstat
 ```
-_depstat will assume the source directory is located at `./src/` and package.json is located at `.`_:
+_depstat will assume the source directory is located at `./src` and package.json is located at `.`_:
 
 _but this can be changed with options:_
 ``` sh
-$:~/Project$ depstat --path [path to src files] --dep [path to package.json]
+$:~/Project$ depstat --path=[path to src files] --dep=[path to package.json]
 ```
 ## example 1
 ##### with CommonJS loader
@@ -48,7 +48,7 @@ _then from the command line inside of your **project's root folder**_:
 ``` sh
 $:~/Project$ depstat
 ```
-_depstat automatically searches **the src/** folder in your project's root_
+_depstat automatically searches through all **js** files in the **./src** directory_
 
 _the result_:
 ``` sh
@@ -90,7 +90,7 @@ _then from the command line_:
 ``` sh
 $:~/www/client1/Project$ depstat --es6
 ```
-_depstat automatically searches the src/ folder in your project's root_
+_depstat automatically searches through all **js** files in the **./src** directory_
 
 _the result_:
 ``` sh

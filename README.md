@@ -4,7 +4,9 @@ find all calls to `require()` or `import()` from the command line and tells how 
 
 Note:
 
-__this module is in very early development, please report any issues to github__
+** _This Project is not in development._ **
+
+** _any dev interested in taking over this project, contact me._ **
 
 __searching for es6 modules will only work with jspm as the module loader__
 ___

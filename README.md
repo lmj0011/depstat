@@ -1,16 +1,12 @@
-** _This Project is no longer being maintained, I would recommend not using it unless you're looking to take ownership._ **
+** _This Project is no longer in development._ **
 
+** _any dev interested in taking over this project, leave a comment._ **
 
 
 # depstat
 ___
 find all calls to `require()` or `import()` from the command line and tells how many times a module has been referenced in the js file(s)
 
-Note:
-
-** _This Project is not in development._ **
-
-** _any dev interested in taking over this project, contact me._ **
 
 __searching for es6 modules will only work with jspm as the module loader__
 ___

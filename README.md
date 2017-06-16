@@ -1,3 +1,7 @@
+** _This Project is no longer being maintained, I would recommend not using it unless you're looking to take ownership._ **
+
+
+
 # depstat
 ___
 find all calls to `require()` or `import()` from the command line and tells how many times a module has been referenced in the js file(s)
